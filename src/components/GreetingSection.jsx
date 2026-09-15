@@ -1,6 +1,6 @@
 import { Bell } from 'lucide-react'
 
-export default function GreetingSection() {
+export default function GreetingSection({ onShowPopup }) {
   return (
     <section
       className="flex items-start justify-between px-5 sm:px-8 pt-8 pb-6"
@@ -19,7 +19,7 @@ export default function GreetingSection() {
       </div>
 
       <div className="flex flex-col items-center gap-1 ml-4 pt-1 sm:pt-2">
-        <div className="relative cursor-pointer hover:bg-gray-50 rounded-full transition-colors">
+        <div onClick={onShowPopup} className="relative cursor-pointer hover:bg-gray-50 rounded-full transition-colors">
           <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-gray-300 flex items-center justify-center bg-white shadow-sm">
             <Bell size={22} strokeWidth={1.5} className="text-gray-800" />
           </div>
@@ -27,7 +27,7 @@ export default function GreetingSection() {
             2
           </span>
         </div>
-        <span className="text-[11px] sm:text-[12px] text-gray-800 font-medium cursor-pointer">Notifications</span>
+        <span onClick={onShowPopup} className="text-[11px] sm:text-[12px] text-gray-800 font-medium cursor-pointer hover:underline">Notifications</span>
       </div>
     </section>
   )

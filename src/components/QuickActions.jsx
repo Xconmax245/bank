@@ -7,7 +7,7 @@ const actions = [
   { icon: MoreHorizontal, label: 'More', delay: 180 },
 ]
 
-export default function QuickActions() {
+export default function QuickActions({ onShowPopup }) {
   return (
     <section
       className="flex items-start justify-around px-4 sm:px-8 py-5 sm:py-8 border-t border-gray-100"
@@ -19,6 +19,7 @@ export default function QuickActions() {
         return (
           <button
             key={i}
+            onClick={onShowPopup}
             className="flex flex-col items-center gap-2 flex-1 px-1 hover:opacity-80 transition-opacity active:opacity-70 group"
           >
             <div className="w-[48px] h-[48px] rounded-full border-[1.5px] border-gray-300 flex items-center justify-center bg-white group-hover:border-gray-400 transition-colors">

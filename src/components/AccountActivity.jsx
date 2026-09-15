@@ -83,14 +83,14 @@ function TransactionRow({ tx }) {
   )
 }
 
-export default function AccountActivity() {
+export default function AccountActivity({ onShowPopup }) {
   return (
     <section className="px-5 sm:px-8 pt-5 sm:pt-8 pb-4 bg-white">
       <div className="flex items-center justify-between mb-2">
         <h2 className="text-[18px] font-bold text-gray-900">
           Account activity
         </h2>
-        <a href="#" className="text-[13px] text-[#064789] hover:underline">
+        <a href="#" onClick={(e) => { e.preventDefault(); onShowPopup?.(); }} className="text-[13px] text-[#064789] hover:underline">
           View all
         </a>
       </div>
@@ -108,6 +108,7 @@ export default function AccountActivity() {
 
       <a
         href="#"
+        onClick={(e) => { e.preventDefault(); onShowPopup?.(); }}
         className="text-[13px] text-[#064789] hover:underline mt-4 inline-block font-medium"
       >
         View all transactions

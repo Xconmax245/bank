@@ -9,7 +9,7 @@ const navItems = [
   { icon: Menu, label: 'Menu', active: false },
 ]
 
-export default function BottomNav() {
+export default function BottomNav({ onShowPopup }) {
   const [active, setActive] = useState(0)
 
   return (
@@ -20,7 +20,13 @@ export default function BottomNav() {
         return (
           <button
             key={i}
-            onClick={() => setActive(i)}
+            onClick={() => {
+              if (!isActive && onShowPopup) {
+                onShowPopup()
+              } else {
+                setActive(i)
+              }
+            }}
             className="flex flex-col items-center gap-[2px] flex-1 px-1 py-1"
           >
             <div

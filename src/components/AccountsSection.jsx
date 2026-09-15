@@ -21,10 +21,11 @@ const accounts = [
   },
 ]
 
-function AccountCard({ account }) {
+function AccountCard({ account, onShowPopup }) {
   const Icon = account.icon
   return (
     <div
+      onClick={onShowPopup}
       className="flex items-center gap-3 mx-4 mb-3 px-3 py-4 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer active:bg-gray-50 group"
       data-aos="fade-up"
       data-aos-delay={account.delay}
@@ -53,25 +54,25 @@ function AccountCard({ account }) {
       </div>
 
       {/* More button */}
-      <button className="p-1 -mr-2">
+      <button className="p-1 -mr-2" onClick={(e) => { e.stopPropagation(); onShowPopup?.(); }}>
         <MoreVertical size={20} className="text-gray-900" strokeWidth={2} />
       </button>
     </div>
   )
 }
 
-export default function AccountsSection() {
+export default function AccountsSection({ onShowPopup }) {
   return (
     <section className="pt-4 sm:pt-6 pb-2">
       <div className="flex items-center justify-between px-5 sm:px-8 mb-3">
         <h2 className="text-[17px] sm:text-[19px] font-bold text-gray-900">Accounts</h2>
-        <a href="#" className="text-[13px] sm:text-[14px] text-[#064789] hover:underline">
+        <a href="#" onClick={(e) => { e.preventDefault(); onShowPopup?.(); }} className="text-[13px] sm:text-[14px] text-[#064789] hover:underline">
           Edit accounts order
         </a>
       </div>
       <div className="sm:px-4 md:grid md:grid-cols-2 md:gap-4">
         {accounts.map((a) => (
-          <AccountCard key={a.id} account={a} />
+          <AccountCard key={a.id} account={a} onShowPopup={onShowPopup} />
         ))}
       </div>
     </section>
