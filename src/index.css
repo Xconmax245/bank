@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-gray-100 font-sans;
+  }
+}
+
+/* Thin scrollbar for the mobile frame */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+.scroll-container {
+  scrollbar-width: none;
+}
