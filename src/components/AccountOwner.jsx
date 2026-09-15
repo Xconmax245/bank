@@ -8,7 +8,7 @@ export default function AccountOwner() {
         className="text-[26px] sm:text-[30px] text-[#9b1b22] mb-1"
         style={{ fontFamily: '"Times New Roman", Times, serif' }}
       >
-        Emily Joel
+        Daniel R. Caine
       </p>
       <a href="#" className="text-[13px] sm:text-[14px] text-[#064789] hover:underline">
         Manage account nickname

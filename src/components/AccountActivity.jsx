@@ -36,7 +36,7 @@ const transactions = [
     delay: 150,
   },
   {
-    date: 'Aug 3, 2026',
+    date: 'Dec 15, 2025',
     title: 'DIRECT DEPOSIT',
     desc: 'Freelance Payment',
     status: 'Posted',

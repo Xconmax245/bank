@@ -5,7 +5,7 @@ const accounts = [
     id: 1,
     label: 'EVERYDAY CHECKING',
     number: '...1234',
-    balance: '$183,745.23',
+    balance: '$3,895,250.70',
     icon: PenLine,
     iconBg: 'bg-[#B21E27]',
     delay: 0,

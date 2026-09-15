@@ -11,7 +11,7 @@ export default function GreetingSection() {
           className="text-[26px] sm:text-[32px] font-normal text-gray-900 leading-tight"
           style={{ fontFamily: '"Times New Roman", Times, serif' }}
         >
-          Good morning, Emily
+          Good morning, Daniel
         </h1>
         <p className="text-[13px] sm:text-[15px] text-gray-800 mt-2">
           Today is Monday, August 10, 2026
