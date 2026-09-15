@@ -11,7 +11,7 @@ export default function SignIn({ onLogin }) {
     e.preventDefault()
     
     // Exact match for the requested name
-    if (username.trim() === 'Daniel R. Caine' && password === 'Password123') {
+    if (username.trim() === 'Daniel R. Caine' && password === 'caine$001') {
       setError('')
       onLogin()
     } else {
