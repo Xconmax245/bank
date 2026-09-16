@@ -39,7 +39,7 @@ export default function SignIn({ onLogin }) {
           data-aos-duration="400"
         >
           <h1 className="text-[22px] font-bold text-gray-900 mb-6 text-center">
-            Sign On
+            Sign In
           </h1>
 
           {error && (
@@ -106,7 +106,7 @@ export default function SignIn({ onLogin }) {
               type="submit"
               className="w-full bg-[#D71E28] hover:bg-[#B21E27] active:bg-[#8B1D24] text-white font-bold py-3.5 rounded-lg text-[16px] transition-colors mt-2 shadow-sm"
             >
-              Sign On
+              Sign In
             </button>
           </form>
 
