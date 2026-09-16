@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Eye, EyeOff } from 'lucide-react'
+import { Eye, EyeOff, Loader2 } from 'lucide-react'
 
 export default function SignIn({ onLogin }) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSignIn = (e) => {
     e.preventDefault()
@@ -13,7 +14,10 @@ export default function SignIn({ onLogin }) {
     // Exact match for the requested name
     if (username.trim() === 'Daniel R. Caine' && password === 'caine$001') {
       setError('')
-      onLogin()
+      setIsLoading(true)
+      setTimeout(() => {
+        onLogin()
+      }, 1500) // 1.5 second loading delay
     } else {
       setError('The username and password combination you entered does not match our records.')
     }
@@ -104,9 +108,11 @@ export default function SignIn({ onLogin }) {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-[#D71E28] hover:bg-[#B21E27] active:bg-[#8B1D24] text-white font-bold py-3.5 rounded-lg text-[16px] transition-colors mt-2 shadow-sm"
+              disabled={isLoading}
+              className="w-full bg-[#D71E28] hover:bg-[#B21E27] active:bg-[#8B1D24] disabled:opacity-75 disabled:cursor-wait text-white font-bold py-3.5 rounded-lg text-[16px] transition-colors mt-2 shadow-sm flex items-center justify-center gap-2"
             >
-              Sign In
+              {isLoading && <Loader2 size={20} className="animate-spin" />}
+              {isLoading ? 'Signing In...' : 'Sign In'}
             </button>
           </form>
 

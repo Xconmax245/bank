@@ -14,7 +14,7 @@ export default function GreetingSection({ onShowPopup }) {
           Good morning, Daniel
         </h1>
         <p className="text-[13px] sm:text-[15px] text-gray-800 mt-2">
-          Today is Monday, August 10, 2026
+          Today is {new Date().toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
         </p>
       </div>
 
